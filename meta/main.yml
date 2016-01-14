@@ -23,5 +23,5 @@ galaxy_info:
       - vivid
       - wily
   categories:
-   - development
+   - system
 dependencies: []
