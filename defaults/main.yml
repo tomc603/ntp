@@ -18,3 +18,5 @@ ntp_statistics: no
 ntp_broadcast: no
 ntp_broadcastclient: no
 ntp_multicastclient: no
+
+apt_cache_valid_time: 43200 # 12 hour default cache time

@@ -9,14 +9,12 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Install the required packages in Debian derivatives
-  apt: name={{ item }} state=installed update_cache=yes
+  apt: name={{ item }} state=installed update_cache=yes cache_valid_time={{ apt_cache_valid_time }}
   with_items: ntp_pkgs
   environment: env
   when: ansible_os_family == 'Debian'
 
 - name: Copy the ntp.conf template file
   template: src=ntp.conf.j2 dest=/etc/ntp.conf
-  notify: 
+  notify:
    - restart ntp
-
- 
