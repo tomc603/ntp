@@ -18,7 +18,6 @@ galaxy_info:
    - name: Ubuntu
      versions:
       - precise
-      - saucy
       - trusty
       - vivid
       - wily
