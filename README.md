@@ -3,10 +3,14 @@ ntp
 
 This role enables users to install and configure ntp on their hosts.
 
+This repo is a fork of Benno Joy's work which applies several outstanding
+changes, cleans up supported distributions and versions, and uses more modern
+Ansible components such as the `package` module.
+
 Requirements
 ------------
 
-This role requires Ansible 1.4 or higher, and platform requirements are listed
+This role requires Ansible 2.0 or higher, and platform requirements are listed
 in the metadata file.
 
 Role Variables
@@ -16,15 +20,16 @@ The variables that can be passed to this role and a brief description about
 them are as follows. See the NTP configuration documentation for details:
 
 	# The driftfile
-	ntp_driftfile: /var/lib/ntp/drifta
+	ntp_driftfile: /var/lib/ntp/drift
 
 	# The server to sync time with
-	ntp_server: [0.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
+	ntp_server: [0.pool.ntp.org, 1.pool.ntp.org]
 
 	ntp_restrict:                                                           
 	  - "restrict -4 default kod notrap nomodify nopeer noquery"
 	  - "restrict -6 default kod notrap nomodify nopeer noquery"
 	  - "restrict 127.0.0.1"
+		- "restrict ::1"
 
 	ntp_crypto: no
 	ntp_includefile: no
@@ -51,7 +56,7 @@ Examples
 	- hosts: all
 	  roles:
 	    - role: ntp
-	      ntp_server: [2.ubuntu.pool.ntp.org, 1.ubuntu.pool.ntp.org]
+	      ntp_server: [0.jp.pool.ntp.org, 0.us.pool.ntp.org]
 
 Dependencies
 ------------
@@ -66,5 +71,6 @@ BSD
 Author Information
 ------------------
 
-Benno Joy
+Tom Cameron
 
+Benno Joy
