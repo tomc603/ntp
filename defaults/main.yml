@@ -6,6 +6,7 @@ ntp_restrict:
   - "restrict -4 default kod notrap nomodify nopeer noquery"
   - "restrict -6 default kod notrap nomodify nopeer noquery"
   - "restrict 127.0.0.1"
+  - "restrict ::1"
 
 ntp_crypto: no
 ntp_includefile: no
@@ -14,6 +15,6 @@ ntp_trustedkey: no
 ntp_requestkey: no
 ntp_controlkey: no
 ntp_statistics: no
-ntp_broadcast: no 
-ntp_broadcastclient: no         
+ntp_broadcast: no
+ntp_broadcastclient: no
 ntp_multicastclient: no
