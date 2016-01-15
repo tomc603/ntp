@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/tomc603/ntp.svg?branch=master)](https://travis-ci.org/tomc603/ntp)
-
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-tomc603.ntp-blue.svg)](https://img.shields.io/badge/galaxy-tomc603.ntp-blue.svg)
 
 ntp
 ===
